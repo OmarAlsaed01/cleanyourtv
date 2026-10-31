@@ -1,0 +1,10 @@
+# Batch 4: features the owner doesn't use (31 Oct 2026 checklist)
+# com.google.android.tts has a Play Store update in /data/app: revert it first (pm uninstall-system-updates <pkg>)
+com.sonyericsson.dlna             # DLNA media server/renderer
+com.sony.huey.dlna.module
+com.sony.huey.dlna.renderersettings
+com.sony.dtv.webapi.core          # Sony IP control (Home Assistant's Bravia integration needs it)
+com.uei.quicksetsdk.sony          # UEI QuickSet: IR control of cable boxes/soundbars; HDMI-CEC unaffected
+com.google.android.tts            # Google text-to-speech: TalkBack and read-aloud stop working
+com.sony.dtv.seeds.iot            # Sony smart-home / phone-app link (BRAVIA Connect, remote start)
+com.sony.dtv.seeds.auth           # Sony seeds authentication service

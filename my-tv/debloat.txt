@@ -1,0 +1,71 @@
+# Sony BRAVIA 4K VH21 (XR-65X90K, 2022, device BRAVIA_VH21, ro.soc.model MT5835), US/Canada firmware
+# Android 12 (Google TV, API 31), build BRAVIA_VH21_M_UC-user 12 STT2.230505.001.S136 682241, 3 GB RAM, Wi-Fi
+#
+# Apply:   tools\disable.ps1 -TvHost <tv ip> my-tv\debloat.txt
+# Undo:    tools\restore.ps1 -TvHost <tv ip> my-tv\debloat.txt -Stock com.google.android.apps.tv.launcherx
+# Everything is DISABLED, not uninstalled. Comment out any line you want to keep.
+#
+# Applied 31 Oct 2026 in five batches (my-tv\batch1.txt .. batch5.txt), with Home, Settings, Prime Video,
+# one HDMI input and the Input button checked after each. Built from examples/sony-bravia-4k-vh21.
+# Before disabling, these had their Play Store updates removed (pm uninstall-system-updates <pkg>):
+# promos, sonytab, netflix.ninja, disneyplus, youtube.tv, youtube.tvmusic, appletv, sonypicturescore,
+# videos, play.games, tts. Re-enabled, they start at the factory version and the Play Store updates them.
+# Screensaver moved off livingfit first: screensaver_components = com.google.android.apps.tv.dreamx/.service.Backdrop
+# (was com.sony.dtv.livingfit/com.sony.dtv.livingfit.MainDreamService).
+# Kept by owner's choice: Prime Video, Google Assistant / mic (katniss, voicesearch, assistantadapter),
+# Chromecast built-in (mediashell), AirPlay/HomeKit, firmware updates, setupwraith (owns the saved Wi-Fi).
+# Already disabled at the factory: com.sony.dtv.b2b.vendorprotocol, com.sony.dtv.b2b.softap.
+
+# ACR viewing tracker
+tv.samba.ssm                      # Samba TV fingerprints what's on screen
+tv.samba.ssm.ui
+
+# telemetry and remote support
+com.sonyericsson.idd.agent        # Sony IDD usage-data agent
+com.sony.dtv.usercontext          # user context providers, boot receiver only
+com.qterics.da.product            # Qterics device agent
+com.sony.dtv.da.service           # remote-support session service
+com.sony.dtv.sonybugreportsys     # Sony bug report service
+com.google.android.feedback
+
+# Sony ads, promos, help and recommendation rows
+com.sony.dtv.promos
+com.sony.dtv.sonyselect           # Sony Select app recommendations
+com.sony.dtv.sonytab              # Sony content tab / partner rows
+com.sony.dtv.smarthelp            # Sony help tile
+com.sony.dtv.helpguidecontents    # help guide contents
+com.sony.dtv.ecodashboard         # Eco dashboard tile
+com.sony.dtv.customersupport      # customer support tile
+
+# demo / shop mode
+com.sony.dtv.demosupport
+com.sony.dtv.demosystemsupport
+com.sony.dtv.multiscreendemo
+
+# streaming and Google apps (off by choice; Prime Video kept)
+com.netflix.ninja                 # Netflix
+com.disney.disneyplus             # Disney+
+com.google.android.youtube.tv     # YouTube (owner uses SmartTube)
+com.google.android.youtube.tvmusic # YouTube Music
+com.apple.atve.sony.appletv       # Apple TV app
+com.sonypicturescore              # Sony Pictures Core
+com.google.android.videos         # Google TV movies (loses access to purchases in it)
+com.google.android.play.games
+
+# features not used (off by choice)
+com.sonyericsson.dlna             # DLNA media server/renderer
+com.sony.huey.dlna.module
+com.sony.huey.dlna.renderersettings
+com.sony.dtv.webapi.core          # Sony IP control (Home Assistant's Bravia integration needs it)
+com.uei.quicksetsdk.sony          # UEI QuickSet: IR control of cable boxes/soundbars; HDMI-CEC unaffected
+com.google.android.tts            # Google text-to-speech: TalkBack and read-aloud stop working
+
+# Sony IoT / BRAVIA Connect and BRAVIA CAM (no camera attached)
+com.sony.dtv.seeds.iot            # Sony smart-home / phone-app link (BRAVIA Connect, remote start)
+com.sony.dtv.seeds.auth
+com.sony.dtv.seeds.iot.remotestart
+com.sony.dtv.gestureapp           # BRAVIA CAM gestures
+com.sony.dtv.sensingcamera.fwupdate # BRAVIA CAM firmware update checker; the TV's own updater stays on
+com.sony.dtv.sensingcamera.settings
+com.sony.dtv.distancealert
+com.sony.dtv.livingfit            # BRAVIA CAM Living Fit (was the stock screensaver)

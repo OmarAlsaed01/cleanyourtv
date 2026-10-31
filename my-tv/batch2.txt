@@ -1,0 +1,10 @@
+# Batch 2: Sony ads, promos, help tiles and shop demo (from examples/sony-bravia-4k-vh21)
+# promos and sonytab have Play Store updates in /data/app: revert them first (pm uninstall-system-updates <pkg>)
+com.sony.dtv.promos               # Sony promos
+com.sony.dtv.sonyselect           # Sony Select app recommendations
+com.sony.dtv.sonytab              # Sony content tab / partner rows
+com.sony.dtv.smarthelp            # Sony help tile
+com.sony.dtv.helpguidecontents    # help guide contents
+com.sony.dtv.ecodashboard         # Eco dashboard tile
+com.sony.dtv.customersupport      # customer support tile
+com.sony.dtv.demosupport          # shop demo mode

@@ -1,0 +1,12 @@
+# Batch 5: BRAVIA CAM services (no camera attached) and the rest of shop demo mode
+# The screensaver ships pointing at livingfit: before this batch, run
+#   settings put secure screensaver_components com.google.android.apps.tv.dreamx/.service.Backdrop
+# Undo: settings put secure screensaver_components com.sony.dtv.livingfit/com.sony.dtv.livingfit.MainDreamService
+com.sony.dtv.seeds.iot.remotestart # remote start receiver for seeds IoT
+com.sony.dtv.gestureapp           # BRAVIA CAM gestures
+com.sony.dtv.sensingcamera.fwupdate # BRAVIA CAM firmware update checker; the TV's own updater stays on
+com.sony.dtv.sensingcamera.settings # BRAVIA CAM settings provider
+com.sony.dtv.distancealert        # BRAVIA CAM proximity/distance alert
+com.sony.dtv.livingfit            # BRAVIA CAM Living Fit (also the stock screensaver)
+com.sony.dtv.demosystemsupport    # shop demo mode
+com.sony.dtv.multiscreendemo      # shop demo mode

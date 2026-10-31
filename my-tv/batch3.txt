@@ -1,0 +1,10 @@
+# Batch 3: built-in streaming and Google apps the owner doesn't use (Prime Video stays)
+# All have Play Store updates in /data/app: revert each first (pm uninstall-system-updates <pkg>)
+com.netflix.ninja                 # Netflix
+com.disney.disneyplus             # Disney+
+com.google.android.youtube.tv     # YouTube (owner uses SmartTube)
+com.google.android.youtube.tvmusic # YouTube Music
+com.apple.atve.sony.appletv       # Apple TV app
+com.sonypicturescore              # Sony Pictures Core (factory-disabled on the AU unit)
+com.google.android.videos         # Google TV movies (loses access to purchases in it)
+com.google.android.play.games     # Google Play Games

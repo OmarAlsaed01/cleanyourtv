@@ -1,0 +1,9 @@
+# Batch 1: ACR viewing tracker, telemetry and remote support (from examples/sony-bravia-4k-vh21)
+tv.samba.ssm                      # Samba TV fingerprints what's on screen
+tv.samba.ssm.ui
+com.sonyericsson.idd.agent        # Sony IDD usage-data agent
+com.sony.dtv.usercontext          # user context providers, boot receiver only
+com.qterics.da.product            # Qterics device agent
+com.sony.dtv.da.service           # remote-support session service
+com.sony.dtv.sonybugreportsys     # Sony bug report service
+com.google.android.feedback       # Google feedback / bug report sender
